@@ -3,7 +3,7 @@ const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const puppeteer = require("puppeteer");
+
 app.use(cors());
 
 MongoClient.connect(

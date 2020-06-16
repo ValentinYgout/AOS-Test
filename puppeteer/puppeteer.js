@@ -14,7 +14,10 @@ const puppeteer = require("puppeteer");
   await page.evaluate(() => {
     document.querySelector("button[type=submit]").click();
   });
-
+  await page.waitForFunction(
+    `document.querySelector("body").innerText.includes("Login")`
+  );
+  console.log("Login successful");
   await page.screenshot({ path: "login-succesful.png" });
 
   const page2 = await browser.newPage();
@@ -29,7 +32,10 @@ const puppeteer = require("puppeteer");
   await page2.evaluate(() => {
     document.querySelector("button[type=submit]").click();
   });
-
+  await page2.waitForFunction(
+    `document.querySelector("body").innerText.includes("Login")`
+  );
+  console.log("Login failed");
   await page2.screenshot({ path: "login-error.png" });
 
   await browser.close();

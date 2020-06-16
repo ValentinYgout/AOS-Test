@@ -45,7 +45,6 @@ function App() {
             login
           </button>
         </form>
-        <p>email ou mdp incorrect</p>
       </header>
     </div>
   );
